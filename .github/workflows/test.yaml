@@ -46,10 +46,7 @@ jobs:
         env:
           TOPAZ_DIR: /github/workspace/_topaz
         options: >-
-          --health-cmd "grpc-health-probe -addr=:8484 -connect-timeout=30s -rpc-timeout=30s"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
+          run --config-file /github/workspace/_topaz/cfg/config.yaml
         ports:
           - 8282:8282
           - 8383:8383
