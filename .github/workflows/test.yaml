@@ -48,7 +48,7 @@ jobs:
           go install github.com/grpc-ecosystem/grpc-health-probe@latest
       - name: Probe
         run: |
-          grpc-health-probe -addr=:8484
+          grpc-health-probe -addr=:8484 -connect-timeout=30 -rpc-timeout=30
       -
         name: Ping
         run: |
