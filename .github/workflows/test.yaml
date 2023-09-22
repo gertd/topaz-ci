@@ -53,10 +53,6 @@ jobs:
         run: |
           topaz start --container-name="topaz" --container-version="latest" --hostname=localhost
       -
-        name: Dump directory
-        run: |
-          find ~/.config/topaz -type f
-      -
         name: Topaz Health Check
         run: |
           grpc-health-probe -addr=localhost:8484 -connect-timeout=120s -rpc-timeout=120s
@@ -64,6 +60,7 @@ jobs:
         name: Dump directory
         run: |
           find ~/.config/topaz -type f
+          find . -type f
       -
         name: Ping
         run: |
@@ -72,12 +69,12 @@ jobs:
       -
         name: Topaz Load Manifest
         run: |
-          topaz load $GITHUB_WORKSPACE/model/manifest.yaml --insecure --no-check
+          topaz load ./model/manifest.yaml --insecure --no-check
       -
         name: Topaz Load Data
         run: |
-          topaz import --directory=$GITHUB_WORKSPACE/data --insecure --no-check
+          topaz import --directory=./data --insecure --no-check
       -
         name: Topaz Exec Test
         run: |
-          topaz test exec $GITHUB_WORKSPACE/test/assertions.json --insecure --no-check
+          topaz test exec ./test/assertions.json --insecure --no-check

@@ -1,0 +1,43 @@
+# user
+user:
+  # a user has a manager
+  manager:
+
+# group
+group:
+  # a group has members
+  member:
+
+# identity
+identity:
+  # an identity points to a user
+  identifier:
+
+# feedback
+feedback:
+  # assignee relation
+  assignee:
+    # permissions for assignees
+    permissions:
+    - can_edit
+    - can_view_meta
+    - can_view_feedback
+  # review subject relation
+  review_subject:
+    # permissions for review subject
+    permissions:
+    - can_view_meta
+
+  # admin relation
+  admin:
+    # permissions for admin
+    permissions:
+    - can_view_meta
+    - can_admin
+
+calibration_security_group:
+  viewer:
+  member:
+
+# attributes
+##  feedback status: submitted or completed

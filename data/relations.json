@@ -1,0 +1,246 @@
+{
+  "relations": [
+    {
+      "object": {
+        "type": "identity",
+        "key": "employee1@roblox.com"
+      },
+      "relation": "identifier",
+      "subject": {
+        "type": "user",
+        "key": "employee1@roblox.com"
+      }
+    },
+    {
+      "object": {
+        "type": "identity",
+        "key": "employee2@roblox.com"
+      },
+      "relation": "identifier",
+      "subject": {
+        "type": "user",
+        "key": "employee2@roblox.com"
+      }
+    },
+    {
+      "object": {
+        "type": "identity",
+        "key": "employee3@roblox.com"
+      },
+      "relation": "identifier",
+      "subject": {
+        "type": "user",
+        "key": "employee3@roblox.com"
+      }
+    },
+    {
+      "object": {
+        "type": "identity",
+        "key": "employee4@roblox.com"
+      },
+      "relation": "identifier",
+      "subject": {
+        "type": "user",
+        "key": "employee4@roblox.com"
+      }
+    },
+    {
+      "object": {
+        "type": "identity",
+        "key": "employee5@roblox.com"
+      },
+      "relation": "identifier",
+      "subject": {
+        "type": "user",
+        "key": "employee5@roblox.com"
+      }
+    },
+    {
+      "object": {
+        "type": "identity",
+        "key": "employee6@roblox.com"
+      },
+      "relation": "identifier",
+      "subject": {
+        "type": "user",
+        "key": "employee6@roblox.com"
+      }
+    },
+    {
+      "object": {
+        "type": "identity",
+        "key": "employee7@roblox.com"
+      },
+      "relation": "identifier",
+      "subject": {
+        "type": "user",
+        "key": "employee7@roblox.com"
+      }
+    },
+    {
+      "object": {
+        "type": "user",
+        "key": "employee2@roblox.com"
+      },
+      "relation": "manager",
+      "subject": {
+        "type": "user",
+        "key": "employee4@roblox.com"
+      }
+    },
+    {
+      "object": {
+        "type": "user",
+        "key": "employee1@roblox.com"
+      },
+      "relation": "manager",
+      "subject": {
+        "type": "user",
+        "key": "employee2@roblox.com"
+      }
+    },
+    {
+      "object": {
+        "type": "feedback",
+        "key": "peer-feedback-1"
+      },
+      "relation": "assignee",
+      "subject": {
+        "type": "user",
+        "key": "employee3@roblox.com"
+      }
+    },
+    {
+      "object": {
+        "type": "feedback",
+        "key": "peer-feedback-1"
+      },
+      "relation": "review_subject",
+      "subject": {
+        "type": "user",
+        "key": "employee4@roblox.com"
+      }
+    },
+    {
+      "object": {
+        "type": "feedback",
+        "key": "peer-feedback-2"
+      },
+      "relation": "assignee",
+      "subject": {
+        "type": "user",
+        "key": "employee3@roblox.com"
+      }
+    },
+    {
+      "object": {
+        "type": "feedback",
+        "key": "peer-feedback-2"
+      },
+      "relation": "review_subject",
+      "subject": {
+        "type": "user",
+        "key": "employee4@roblox.com"
+      }
+    },
+    {
+      "object": {
+        "type": "feedback",
+        "key": "peer-feedback-3"
+      },
+      "relation": "assignee",
+      "subject": {
+        "type": "user",
+        "key": "employee3@roblox.com"
+      }
+    },
+    {
+      "object": {
+        "type": "feedback",
+        "key": "peer-feedback-3"
+      },
+      "relation": "review_subject",
+      "subject": {
+        "type": "user",
+        "key": "employee4@roblox.com"
+      }
+    },
+    {
+      "object": {
+        "type": "group",
+        "key": "rogro_admin"
+      },
+      "relation": "member",
+      "subject": {
+        "type": "user",
+        "key": "employee6@roblox.com"
+      }
+    },
+    {
+      "object": {
+        "type": "feedback",
+        "key": "peer-feedback-1"
+      },
+      "relation": "admin",
+      "subject": {
+        "type": "group",
+        "key": "rogro_admin"
+      }
+    },
+    {
+      "object": {
+        "type": "feedback",
+        "key": "peer-feedback-2"
+      },
+      "relation": "admin",
+      "subject": {
+        "type": "group",
+        "key": "rogro_admin"
+      }
+    },
+    {
+      "object": {
+        "type": "feedback",
+        "key": "peer-feedback-3"
+      },
+      "relation": "admin",
+      "subject": {
+        "type": "group",
+        "key": "rogro_admin"
+      }
+    },
+    {
+      "object": {
+        "type": "calibration_security_group",
+        "key": "1"
+      },
+      "relation": "viewer",
+      "subject": {
+        "type": "user",
+        "key": "employee7@roblox.com"
+      }
+    },
+    {
+      "object": {
+        "type": "calibration_security_group",
+        "key": "1"
+      },
+      "relation": "member",
+      "subject": {
+        "type": "user",
+        "key": "employee4@roblox.com"
+      }
+    },
+    {
+      "object": {
+        "type": "calibration_security_group",
+        "key": "2"
+      },
+      "relation": "member",
+      "subject": {
+        "type": "user",
+        "key": "employee4@roblox.com"
+      }
+    }
+  ]
+}

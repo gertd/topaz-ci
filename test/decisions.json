@@ -1,0 +1,228 @@
+{
+    "assertions": [
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee1@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_view_feedback", "decisions": ["allowed"]}
+            },
+            "expected": true
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee2@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_view_feedback", "decisions": ["allowed"]}
+            },
+            "expected": true
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee3@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_view_feedback", "decisions": ["allowed"]}
+            },
+            "expected": true
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee4@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_view_feedback", "decisions": ["allowed"]}
+            },
+            "expected": false
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee5@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_view_feedback", "decisions": ["allowed"]}
+            },
+            "expected": false
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee6@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_view_feedback", "decisions": ["allowed"]}
+            },
+            "expected": false
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee7@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_view_feedback", "decisions": ["allowed"]}
+            },
+            "expected": false
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee1@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_edit", "decisions": ["allowed"]}
+            },
+            "expected": false
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee2@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_edit", "decisions": ["allowed"]}
+            },
+            "expected": false
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee3@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_edit", "decisions": ["allowed"]}
+            },
+            "expected": true
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee4@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_edit", "decisions": ["allowed"]}
+            },
+            "expected": false
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee5@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_edit", "decisions": ["allowed"]}
+            },
+            "expected": false
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee6@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_edit", "decisions": ["allowed"]}
+            },
+            "expected": false
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee7@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_edit", "decisions": ["allowed"]}
+            },
+            "expected": false
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee1@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_view_meta", "decisions": ["allowed"]}
+            },
+            "expected": true
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee2@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_view_meta", "decisions": ["allowed"]}
+            },
+            "expected": true
+        },        {
+            "check_decision": {
+                "identityContext": { "identity": "employee3@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_view_meta", "decisions": ["allowed"]}
+            },
+            "expected": true
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee4@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_view_meta", "decisions": ["allowed"]}
+            },
+            "expected": true
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee5@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_view_meta", "decisions": ["allowed"]}
+            },
+            "expected": false
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee6@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_view_meta", "decisions": ["allowed"]}
+            },
+            "expected": true
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee7@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-2"},
+                "policyContext": { "path": "roblox.can_view_meta", "decisions": ["allowed"]}
+            },
+            "expected": true
+        },
+
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee1@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_admin", "decisions": ["allowed"]}
+            },
+            "expected": false
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee2@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_admin", "decisions": ["allowed"]}
+            },
+            "expected": false
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee3@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_admin", "decisions": ["allowed"]}
+            },
+            "expected": false
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee4@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_admin", "decisions": ["allowed"]}
+            },
+            "expected": false
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee5@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_admin", "decisions": ["allowed"]}
+            },
+            "expected": false
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee6@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-1"},
+                "policyContext": { "path": "roblox.can_admin", "decisions": ["allowed"]}
+            },
+            "expected": true
+        },
+        {
+            "check_decision": {
+                "identityContext": { "identity": "employee7@roblox.com", "type": "IDENTITY_TYPE_SUB"},
+                "resourceContext": { "key": "peer-feedback-2"},
+                "policyContext": { "path": "roblox.can_view_meta", "decisions": ["allowed"]}
+            },
+            "expected": true
+        }
+    ]
+}

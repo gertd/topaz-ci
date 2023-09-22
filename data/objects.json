@@ -1,0 +1,183 @@
+{
+  "objects": [
+    {
+      "key": "employee1@roblox.com",
+      "displayName": "Employee 1",
+      "type": "identity",
+      "properties": {
+        "kind": "IDENTITY_KIND_EMAIL",
+        "provider": "local",
+        "verified": true
+      }
+    },
+    {
+      "key": "employee1@roblox.com",
+      "type": "user",
+      "displayName": "Employee 1",
+      "properties": {
+        "email": "employee1@roblox.com",
+        "picture": "https://github.com/aserto-demo/contoso-ad-sample/raw/main/UserImages/Rick%20Sanchez.jpg",
+        "status": "USER_STATUS_ACTIVE"
+      }
+    },
+    {
+      "key": "employee2@roblox.com",
+      "displayName": "Employee 2",
+      "type": "identity",
+      "properties": {
+        "kind": "IDENTITY_KIND_EMAIL",
+        "provider": "local",
+        "verified": true
+      }
+    },
+    {
+      "key": "employee2@roblox.com",
+      "type": "user",
+      "displayName": "Employee 2",
+      "properties": {
+        "email": "employee2@roblox.com",
+        "picture": "https://github.com/aserto-demo/contoso-ad-sample/raw/main/UserImages/Morty%20Smith.jpg",
+        "status": "USER_STATUS_ACTIVE"
+      }
+    },
+    {
+      "key": "employee3@roblox.com",
+      "displayName": "Employee 3",
+      "type": "identity",
+      "properties": {
+        "kind": "IDENTITY_KIND_EMAIL",
+        "provider": "local",
+        "verified": true
+      }
+    },
+    {
+      "key": "employee3@roblox.com",
+      "type": "user",
+      "displayName": "Employee 3",
+      "properties": {
+        "email": "employee3@roblox.com",
+        "picture": "https://github.com/aserto-demo/contoso-ad-sample/raw/main/UserImages/Summer%20Smith.jpg",
+        "status": "USER_STATUS_ACTIVE"
+      }
+    },
+    {
+      "key": "employee4@roblox.com",
+      "displayName": "Employee 4",
+      "type": "identity",
+      "properties": {
+        "kind": "IDENTITY_KIND_EMAIL",
+        "provider": "local",
+        "verified": true
+      }
+    },
+    {
+      "key": "employee4@roblox.com",
+      "type": "user",
+      "displayName": "Employee 4",
+      "properties": {
+        "email": "employee4@roblox.com",
+        "picture": "https://github.com/aserto-demo/contoso-ad-sample/raw/main/UserImages/Jerry%20Smith.jpg",
+        "status": "USER_STATUS_ACTIVE"
+      }
+    },
+    {
+      "key": "employee5@roblox.com",
+      "displayName": "Employee 5",
+      "type": "identity",
+      "properties": {
+        "kind": "IDENTITY_KIND_EMAIL",
+        "provider": "local",
+        "verified": true
+      }
+    },
+    {
+      "key": "employee5@roblox.com",
+      "type": "user",
+      "displayName": "Employee 5",
+      "properties": {
+        "email": "employee5@roblox.com",
+        "picture": "https://github.com/aserto-demo/contoso-ad-sample/raw/main/UserImages/Jerry%20Smith.jpg",
+        "status": "USER_STATUS_ACTIVE"
+      }
+    },
+    {
+      "key": "employee6@roblox.com",
+      "displayName": "Employee 6",
+      "type": "identity",
+      "properties": {
+        "kind": "IDENTITY_KIND_EMAIL",
+        "provider": "local",
+        "verified": true
+      }
+    },
+    {
+      "key": "employee6@roblox.com",
+      "type": "user",
+      "displayName": "Employee 6",
+      "properties": {
+        "email": "employee6@roblox.com",
+        "picture": "https://github.com/aserto-demo/contoso-ad-sample/raw/main/UserImages/Jerry%20Smith.jpg",
+        "status": "USER_STATUS_ACTIVE"
+      }
+    },
+    {
+      "key": "employee7@roblox.com",
+      "displayName": "Employee 7",
+      "type": "identity",
+      "properties": {
+        "kind": "IDENTITY_KIND_EMAIL",
+        "provider": "local",
+        "verified": true
+      }
+    },
+    {
+      "key": "employee7@roblox.com",
+      "type": "user",
+      "displayName": "Employee 7",
+      "properties": {
+        "email": "employee7@roblox.com",
+        "picture": "https://github.com/aserto-demo/contoso-ad-sample/raw/main/UserImages/Jerry%20Smith.jpg",
+        "status": "USER_STATUS_ACTIVE"
+      }
+    },
+    {
+      "key": "peer-feedback-1",
+      "type": "feedback",
+      "displayName": "Peer Feedback 1",
+      "properties": {
+        "status": "Submitted"
+      }
+    },
+    {
+      "key": "peer-feedback-2",
+      "type": "feedback",
+      "displayName": "Peer Feedback 2",
+      "properties": {
+        "status": "Completed"
+      }
+    },
+    {
+      "key": "peer-feedback-3",
+      "type": "feedback",
+      "displayName": "Peer Feedback 3",
+      "properties": {
+        "status": "NotStarted"
+      }
+    },
+    {
+      "key": "rogro_admin",
+      "type": "group",
+      "displayName": "RoGRO Admins"
+    },
+    {
+      "key": "1",
+      "type": "calibration_security_group",
+      "displayName": "CSG 1"
+    },
+    {
+      "key": "2",
+      "type": "calibration_security_group",
+      "displayName": "CSG 2"
+    }
+   ]
+}
