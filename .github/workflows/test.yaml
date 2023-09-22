@@ -71,7 +71,23 @@ jobs:
         run: |
           grpc-health-probe -addr=localhost:8484 -connect-timeout=120s -rpc-timeout=120s
       -
+        name: Dump directory
+        run: |
+          find ~/.config/topaz -type f
+      -
         name: Ping
         run: |
           curl -k 'https://localhost:8383/api/v2/info'
           curl -k 'https://localhost:8383/api/v2/policies?field_mask=id'
+      -
+        name: Topaz Load Manifest
+        run: |
+          topaz load ./model/manifest.yaml --insecure --no-check
+      -
+        name: Topaz Load Data
+        run: |
+          topaz import --directory=./data --insecure --no-check
+      -
+        name: Topaz Exec Test
+        run: |
+          topaz test exec ./test/assertions.json --insecure --no-check
