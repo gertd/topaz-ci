@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       topaz:
-        image: $TOPAZ_CONTAINER_IMAGE
+        image: ghcr.io/aserto-dev/topaz:latest
         env:
           TOPAZ_DIR: /github/workspace/_topaz
         ports:
