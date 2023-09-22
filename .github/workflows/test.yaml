@@ -22,37 +22,8 @@ env:
   TOPAZ_DIRECTORY_REST_PORT:   9393
 
 jobs:
-  pre:
-    runs-on: ubuntu-latest
-    steps:
-      -
-        name: Setup Go
-        uses: actions/setup-go@v4
-        with:
-          go-version: ${{ env.GO_VERSION }}
-      -
-        name: Install grpc-health-probe
-        run: |
-          go install github.com/grpc-ecosystem/grpc-health-probe@latest
-
   test:
     runs-on: ubuntu-latest
-    needs:
-    - pre
-
-    services:
-      topaz:
-        image: ghcr.io/aserto-dev/topaz:latest
-        env:
-          TOPAZ_DIR: /github/workspace/_topaz
-        options: >-
-          run --config-file /github/workspace/_topaz/cfg/config.yaml
-        ports:
-          - 8282:8282
-          - 8383:8383
-          - 9292:9292
-          - 9393:9393
-
     steps:
       -
         uses: actions/checkout@v3
@@ -65,8 +36,18 @@ jobs:
         name: Install grpc-health-probe
         run: |
           go install github.com/grpc-ecosystem/grpc-health-probe@latest
-      - name: Probe
+      -
+        name: Install topaz CLI
         run: |
+          go install github.com/aserto-dev/topaz/cmd/topaz@latest
+      -
+        name: Install topaz
+        run: |
+          topaz install
+      -
+        name: Install start
+        run: |
+          topaz start
           grpc-health-probe -addr=:8484 -connect-timeout=30s -rpc-timeout=30s
       -
         name: Ping
