@@ -1,0 +1,40 @@
+name: test
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - dev-*
+      - release-*
+    tags:
+      - v*
+  # Run tests for all PRs
+  pull_request:
+
+env:
+  TOPAZ_CONTAINER_IMAGE: ghcr.io/aserto-dev/topaz:latest
+  TOPAZ_AUTHORIZER_GRPC_PORT:  8282
+  TOPAZ_AUTHORIZER_REST_PORT:  8383
+  TOPAZ_DIRECTORY_GRPC_PORT:   9292
+  TOPAZ_DIRECTORY_REST_PORT:   9393
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      topaz:
+        image: $TOPAZ_CONTAINER_IMAGE
+        env:
+          TOPAZ_DIR: /github/workspace/_topaz
+        ports:
+          - $TOPAZ_AUTHORIZER_GRPC_PORT:$TOPAZ_AUTHORIZER_GRPC_PORT
+          - $TOPAZ_AUTHORIZER_REST_PORT:$TOPAZ_AUTHORIZER_REST_PORT
+          - $TOPAZ_DIRECTORY_GRPC_PORT:$TOPAZ_DIRECTORY_GRPC_PORT
+          - $TOPAZ_DIRECTORY_REST_PORT:$TOPAZ_DIRECTORY_REST_PORT
+    steps:
+        - name: Ping
+          run: |
+            curl -k 'https://localhost:8383/api/v2/info'
+            curl -k 'https://localhost:8383/api/v2/policies?field_mask=id'
