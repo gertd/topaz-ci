@@ -57,11 +57,11 @@ jobs:
       -
         name: Topaz Configure
         run: |
-          topaz configure --policy-name=test --resource=ghcr.io/aserto-templates/policy-template@latest
+          topaz configure --policy-name=test --resource=ghcr.io/aserto-policies/policy-template:latest
       -
         name: Topaz Start
         run: |
-          topaz start --container-name="topaz" --container-version="latest" --hostname=localhost
+          topaz run --container-name="topaz" --container-version="latest" --hostname=localhost
       -
         name: Dump directory
         run: |
