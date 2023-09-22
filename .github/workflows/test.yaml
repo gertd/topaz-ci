@@ -15,7 +15,6 @@ on:
 
 env:
   GH_TOKEN: ${{ github.token }}
-  GO_VERSION: "1.19"
   CONTAINER_NAME: topaz
   CONTAINER_VERSION: latest
   POLICY_NAME: roblox
@@ -27,11 +26,6 @@ jobs:
     steps:
       -
         uses: actions/checkout@v4
-      # -
-      #   name: Setup Go
-      #   uses: actions/setup-go@v4
-      #   with:
-      #     go-version: ${{ env.GO_VERSION }}
       -
         name: Install gh CLI
         run: |
@@ -73,10 +67,10 @@ jobs:
           find ~/.config/topaz -type f
           find . -type f
       -
-        name: Ping
+        name: Topaz Info & List Policies
         run: |
-          curl -k 'https://localhost:8383/api/v2/info'
-          curl -k 'https://localhost:8383/api/v2/policies?field_mask=id'
+          curl -k --no-progress-meter 'https://localhost:8383/api/v2/info'
+          curl -k --no-progress-meter 'https://localhost:8383/api/v2/policies?field_mask=package_path'
       -
         name: Topaz Load Manifest
         run: |
