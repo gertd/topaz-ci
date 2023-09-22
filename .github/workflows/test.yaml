@@ -32,16 +32,14 @@ jobs:
         with:
           go-version: ${{ env.GO_VERSION }}
       -
-        uses: Itsblue/download-release-assets-action@v1
-        with:
-          repo: "grpc-ecosystem/grpc-health-probe"
-          version: "v0.4.19"
-          file: "grpc_health_probe-linux-amd64"
-          path: "./bin/grpc-health-probe"
-      -
         name: Install grpc-health-probe
         run: |
-          go install github.com/grpc-ecosystem/grpc-health-probe@latest
+          type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+          curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+          && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+          && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+          && sudo apt update \
+          && sudo apt install gh -y
       -
         name: Install topaz CLI
         run: |
