@@ -47,6 +47,7 @@ jobs:
       -
         name: Install start
         run: |
+          topaz configure --policy-name=test --resource=ghcr.io/aserto-templates/policy-template@latest
           topaz start
           grpc-health-probe -addr=:8484 -connect-timeout=30s -rpc-timeout=30s
       -
