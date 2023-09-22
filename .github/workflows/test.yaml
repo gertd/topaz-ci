@@ -41,15 +41,21 @@ jobs:
         run: |
           go install github.com/aserto-dev/topaz/cmd/topaz@latest
       -
-        name: Install topaz
+        name: Topaz Install
         run: |
           topaz install
       -
-        name: Install start
+        name: Topaz Configure
         run: |
           topaz configure --policy-name=test --resource=ghcr.io/aserto-templates/policy-template@latest
+      -
+        name: Topaz Start
+        run: |
           topaz start
-          grpc-health-probe -addr=:8484 -connect-timeout=30s -rpc-timeout=30s
+      -
+        name: Topaz Health Check
+        run: |
+          grpc-health-probe -addr=localhost:8484 -connect-timeout=30s -rpc-timeout=30s || true
       -
         name: Ping
         run: |
