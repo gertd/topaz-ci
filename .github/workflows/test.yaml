@@ -29,10 +29,10 @@ jobs:
         env:
           TOPAZ_DIR: /github/workspace/_topaz
         ports:
-          - $TOPAZ_AUTHORIZER_GRPC_PORT:$TOPAZ_AUTHORIZER_GRPC_PORT
-          - $TOPAZ_AUTHORIZER_REST_PORT:$TOPAZ_AUTHORIZER_REST_PORT
-          - $TOPAZ_DIRECTORY_GRPC_PORT:$TOPAZ_DIRECTORY_GRPC_PORT
-          - $TOPAZ_DIRECTORY_REST_PORT:$TOPAZ_DIRECTORY_REST_PORT
+          - 8282:8282
+          - 8383:8383
+          - 9292:9292
+          - 9393:9393
     steps:
         - name: Ping
           run: |
