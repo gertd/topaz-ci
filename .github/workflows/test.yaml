@@ -34,7 +34,7 @@ jobs:
           go-version: ${{ env.GO_VERSION }}
       -
         name: Setup caching
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ~/.cache/go-build
@@ -82,12 +82,12 @@ jobs:
       -
         name: Topaz Load Manifest
         run: |
-          topaz load ./model/manifest.yaml --insecure --no-check
+          topaz load $GITHUB_WORKSPACE/model/manifest.yaml --insecure --no-check
       -
         name: Topaz Load Data
         run: |
-          topaz import --directory=./data --insecure --no-check
+          topaz import --directory=$GITHUB_WORKSPACE/data --insecure --no-check
       -
         name: Topaz Exec Test
         run: |
-          topaz test exec ./test/assertions.json --insecure --no-check
+          topaz test exec $GITHUB_WORKSPACE/test/assertions.json --insecure --no-check
