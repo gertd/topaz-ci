@@ -26,13 +26,13 @@ jobs:
     steps:
       -
         uses: actions/checkout@v4
+      # -
+      #   name: Setup Go
+      #   uses: actions/setup-go@v4
+      #   with:
+      #     go-version: ${{ env.GO_VERSION }}
       -
-        name: Setup Go
-        uses: actions/setup-go@v4
-        with:
-          go-version: ${{ env.GO_VERSION }}
-      -
-        name: Install grpc-health-probe
+        name: Install gh CLI
         run: |
           type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
           curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
@@ -41,25 +41,31 @@ jobs:
           && sudo apt update \
           && sudo apt install gh -y
       -
+        name: Install grpc-health-probe CLI
+        run: |
+          gh release download --repo grpc-ecosystem/grpc-health-probe --pattern "grpc_health_probe-linux-amd64" --output ./bin/grpc-health-probe --clobber
+          chmod +x ./bin/grpc-health-probe
+      -
         name: Install topaz CLI
         run: |
-          go install github.com/aserto-dev/topaz/cmd/topaz@latest
+          gh release download --repo aserto-dev/topaz --pattern "topaz_linux_x86_64.zip" --output ./ext/topaz.zip --clobber
+          unzip ./ext/topaz.zip -d bin
       -
         name: Topaz Install
         run: |
-          topaz install
+          ./bin/topaz install
       -
         name: Topaz Configure
         run: |
-          topaz configure --policy-name=${{ env.POLICY_NAME }} --resource=${{env.POLICY_IMAGE}}
+          ./bin/topaz configure --policy-name=${{ env.POLICY_NAME }} --resource=${{env.POLICY_IMAGE}}
       -
         name: Topaz Start
         run: |
-          topaz start --container-name=${{ env.CONTAINER_NAME }} --container-version=${{ env.CONTAINER_VERSION }} --hostname=localhost
+          ./bin/topaz start --container-name=${{ env.CONTAINER_NAME }} --container-version=${{ env.CONTAINER_VERSION }} --hostname=localhost
       -
         name: Topaz Health Check
         run: |
-          grpc-health-probe -addr=localhost:8484 -connect-timeout=120s -rpc-timeout=120s
+          ./bin/grpc-health-probe -addr=localhost:8484 -connect-timeout=120s -rpc-timeout=120s
       -
         name: Dump directory
         run: |
@@ -73,16 +79,16 @@ jobs:
       -
         name: Topaz Load Manifest
         run: |
-          topaz load ./model/manifest.yaml --insecure --no-check
+          ./bin/topaz load ./model/manifest.yaml --insecure --no-check
       -
         name: Topaz Load Data
         run: |
-          topaz import --directory=./data --insecure --no-check
+          ./bin/topaz import --directory=./data --insecure --no-check
       -
         name: Topaz Exec Test (directory)
         run: |
-          topaz test exec ./test/assertions.json --insecure --no-check
+          ./bin/topaz test exec ./test/assertions.json --insecure --no-check
       -
         name: Topaz Exec Test (authorizer)
         run: |
-          topaz test exec ./test/decisions.json --insecure --no-check
+          ./bin/topaz test exec ./test/decisions.json --insecure --no-check
