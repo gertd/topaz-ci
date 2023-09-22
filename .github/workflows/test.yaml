@@ -33,6 +33,16 @@ jobs:
         with:
           go-version: ${{ env.GO_VERSION }}
       -
+        name: Setup caching
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/go-build
+            ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+      -
         name: Install grpc-health-probe
         run: |
           go install github.com/grpc-ecosystem/grpc-health-probe@latest
@@ -51,11 +61,11 @@ jobs:
       -
         name: Topaz Start
         run: |
-          topaz start
+          topaz start --container-name="topaz" --container-version="latest" --hostname=localhost
       -
         name: Topaz Health Check
         run: |
-          grpc-health-probe -addr=localhost:8484 -connect-timeout=30s -rpc-timeout=30s || true
+          grpc-health-probe -addr=localhost:8484 -connect-timeout=120s -rpc-timeout=120s
       -
         name: Ping
         run: |
