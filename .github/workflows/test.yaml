@@ -15,11 +15,10 @@ on:
 
 env:
   GO_VERSION: "1.19"
-  TOPAZ_CONTAINER_IMAGE: ghcr.io/aserto-dev/topaz:latest
-  TOPAZ_AUTHORIZER_GRPC_PORT:  8282
-  TOPAZ_AUTHORIZER_REST_PORT:  8383
-  TOPAZ_DIRECTORY_GRPC_PORT:   9292
-  TOPAZ_DIRECTORY_REST_PORT:   9393
+  CONTAINER_NAME: topaz
+  CONTAINER_VERSION: latest
+  POLICY_NAME: roblox
+  POLICY_IMAGE: ghcr.io/aserto-proj/roblox:latest
 
 jobs:
   test:
@@ -47,11 +46,11 @@ jobs:
       -
         name: Topaz Configure
         run: |
-          topaz configure --policy-name=test --resource=ghcr.io/aserto-policies/policy-template:latest
+          topaz configure --policy-name=${{ env.POLICY_NAME }} --resource=${{env.POLICY_IMAGE}}
       -
         name: Topaz Start
         run: |
-          topaz start --container-name="topaz" --container-version="latest" --hostname=localhost
+          topaz start --container-name=${{ env.CONTAINER_NAME }} --container-version=${{ env.CONTAINER_VERSION }} --hostname=localhost
       -
         name: Topaz Health Check
         run: |
@@ -75,6 +74,10 @@ jobs:
         run: |
           topaz import --directory=./data --insecure --no-check
       -
-        name: Topaz Exec Test
+        name: Topaz Exec Test (directory)
         run: |
           topaz test exec ./test/assertions.json --insecure --no-check
+      -
+        name: Topaz Exec Test (authorizer)
+        run: |
+          topaz test exec ./test/decisions.json --insecure --no-check
